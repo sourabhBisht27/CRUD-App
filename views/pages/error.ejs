@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include ('../partials/head') %>
+    <title><%=title %></title>
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+    <h1 class="text-danger"><%= error %></h1>
+    <% if (showAdd) { %>
+    <img src="noproducts.webp" class="img-fluid" alt="No Products found !" />
+    <% } %>
+  </body>
+</html>

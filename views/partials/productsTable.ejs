@@ -1,0 +1,31 @@
+<table class="table">
+  <thead>
+    <tr>
+      <% Object.keys(products.length > 0 ? products[0]:{}).forEach(function(key){ %>
+      <th scope="col"><%=key.toUpperCase()%></th>
+      <%});%>
+      <th scope="col">Delete ?</th>
+      <th scope="col">Update ?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for( let i = 0; i < products.length; i++ ) { %> <%const {name, id,
+    description, price} = products[i];%>
+    <tr>
+      <td><%=id%></td>
+      <td><%=name%></td>
+      <td><%=description%></td>
+      <td><%=`Rs ${price}`%></td>
+      <th scope="col">
+        <button onclick="onDelete('<%=id%>')" class="btn btn-danger">Delete</button>
+      </th>
+      <th scope="col">
+        <a class="btn btn-primary" href="<%=`/edit/${id}`%>">Update</a>
+      </th>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
+
+
+
